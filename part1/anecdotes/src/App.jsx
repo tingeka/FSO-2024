@@ -49,8 +49,15 @@ const App = () => {
         />
       </div>
       <h1>Anecdote of the day</h1>
-          {anecdotes[ getMostVoted().index ]}
-          <p>Has { getMostVoted().value } votes </p>
+      { 
+        (getMostVoted().value > 0) ?
+        <div>
+          {anecdotes[getMostVoted().index]}
+          <p>Has {getMostVoted().value} votes </p>
+        </div>
+        :
+        <p>No votes yet</p>
+      }
     </div>
   )
 }
